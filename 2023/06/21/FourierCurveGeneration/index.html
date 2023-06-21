@@ -171,7 +171,9 @@
 
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>类比贝塞尔曲线，令</p>
 <p>$$P(t)&#x3D;\sum_{i&#x3D;0}^{n-1}P_if_{i,n}(t)$$</p>
-<p>表示一条以 $t$ 为参数的曲线，</p>
+<p>表示一条以 $t$ 为参数的曲线，其中 $t$ 的取值范围为 $\left(0,1-\dfrac 1n\right)$，且函数族 $f_{i,n}$ 满足</p>
+<p>$$f_{i,n}\left(\frac jn\right)&#x3D;\delta_{ij},\quad i,j\in{0,1,\cdots,n-1}$$</p>
+<p>其中 $\delta_{ij}$ 为Kronecker $\delta$ 符号，故不难发现 $P\left(\frac in\right)&#x3D;P_i$，即曲线 $P(t)$ 依次通过点 $P_i$。下面寻找合适的函数族 $f_{i,n}$。</p>
 
     </div>
     
