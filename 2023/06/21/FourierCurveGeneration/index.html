@@ -171,9 +171,17 @@
 
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>类比贝塞尔曲线，令</p>
 <p>$$P(t)&#x3D;\sum_{i&#x3D;0}^{n-1}P_if_{i,n}(t)$$</p>
-<p>表示一条以 $t$ 为参数的曲线，其中 $t$ 的取值范围为 $\left(0,1-\dfrac 1n\right)$，且函数族 $f_{i,n}$ 满足</p>
+<p>表示一条以 $t$ 为参数的曲线，其中 $t$ 的取值范围为 $\left(0,1-\frac 1n\right)$，且函数族 $f_{i,n}$ 满足</p>
 <p>$$f_{i,n}\left(\frac jn\right)&#x3D;\delta_{ij},\quad i,j\in{0,1,\cdots,n-1}$$</p>
 <p>其中 $\delta_{ij}$ 为Kronecker $\delta$ 符号，故不难发现 $P\left(\frac in\right)&#x3D;P_i$，即曲线 $P(t)$ 依次通过点 $P_i$。下面寻找合适的函数族 $f_{i,n}$。</p>
+<h1 id="理论推导"><a href="#理论推导" class="headerlink" title="理论推导"></a>理论推导</h1><p>我们希望找到一个函数 $f$，满足以下性质：</p>
+<p>$$f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac{n-1}n\right)&#x3D;0 \tag{1}$$</p>
+<p>那么，令 $f_{i,n}(t)&#x3D;f\left(t-\frac{i}n\right)$，则有 $f_{i,n}\left(\frac jn\right)&#x3D;f\left(\frac{j-i}n\right)&#x3D;\delta_{ij}$。</p>
+<p>尝试令 $f(t)&#x3D;C+\sum\limits_{k&#x3D;1}^{m}A_k\cos (2\pi k t)$，其中阶数 $m$ 待定，则易见函数 $f$ 具有以下性质：①周期为1；②是偶函数。因此，$t&#x3D;\frac12$ 也是 $f$ 的一条对称轴，从而当 $n$ 为偶数时，式(1)等价于</p>
+<p>$$\begin{equation}f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac12\right)&#x3D;0\end{equation}$$</p>
+<p>共 $\frac n2+1$ 个方程，故应令 $m&#x3D;\frac n2$；当 $n$ 为奇数时，式(1)等价于</p>
+<p>$$\begin{equation}f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac{n-1}{2n}\right)&#x3D;0\end{equation}$$</p>
+<p>共 $\frac {n+1}2$ 个方程，故应令 $m&#x3D;\frac {n-1}2$。通过求解式(2)或(3)中的方程组解出参数 $A_k$ 和 $C$，就可以得到函数 $f$ 的解析式。</p>
 
     </div>
     
