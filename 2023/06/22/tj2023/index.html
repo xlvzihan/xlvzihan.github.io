@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | Zihan&#39;s Blog</title>
+        <title>2023年天津高考数学20题的思考 | Zihan&#39;s Blog</title>
         <meta name="author" content="xlvzihan" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,6 +32,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -146,64 +150,68 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                    <div class="article">
+    <div>
+        <h1>2023年天津高考数学20题的思考</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/22
+        </span>
         
-        <div class="timeline" data-title="一种基于傅里叶余弦级数的曲线生成方法">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/6/21</div>
-                <a href="/2023/06/21/FourierCurveGeneration/">
-                    <h3>一种基于傅里叶余弦级数的曲线生成方法</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/MATLAB/" style="color: #ff7d73">MATLAB</a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
         
-        <div class="timeline" data-title="2023年天津高考数学20题的思考">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/6/22</div>
-                <a href="/2023/06/22/tj2023/">
-                    <h3>2023年天津高考数学20题的思考</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%95%B0%E5%AD%A6-%E6%9D%82%E8%B0%88/" style="color: #00bcd4">数学 杂谈</a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E5%AD%A6-%E6%9D%82%E8%B0%88/" style="color: #ffa2c4">数学 杂谈</a>
+            </span>
+            
+        </span>
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>看到网上说2023年天津高考数学第20题难度不小，据说还和Stirling公式有关系，故简单看了看，结果还是老套路，利用导数和泰勒公式进行估阶。</p>
+<span id="more"></span>
+
+<p>我们来看题目：</p>
+<blockquote>
+<ol start="20">
+<li>已知函数 $f(x)&#x3D;\left(\frac 1x+\frac 12\right)\ln(x+1)$.</li>
+</ol>
+<p>(1) 求曲线 $y&#x3D;f(x)$ 在 $x&#x3D;2$ 处切线的斜率；</p>
+<p>(2) 当 $x&gt;0$ 时，证明：$f(x)&gt;1$；</p>
+<p>(3) 证明：$\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+1\le 1$.</p>
+</blockquote>
+<p>直接看第(3)问：</p>
+<p>联想到数学分析中的级数，将不等式中间看做级数 $\sum\limits_{k&#x3D;1}^na_k$，首先构造出 $a_k$：令 $a_1&#x3D;\ln(1!)-\left(1+\frac12\right)\ln 1+1&#x3D;1$，$a_{n+1}&#x3D;\left[\frac56&lt;\ln(n+1)!-\left(n+\frac32\right)\ln (n+1)+1\right]-\left[\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+1\right]&#x3D;1-\left(n+\frac12\right)\ln\frac{n+1}{n}&#x3D;1-f\left(\frac1n\right)$</p>
+<p>那么由(2)结论可知$a_n&lt;0(n\ge 2)$，则欲证结论等价于级数收敛且和 $S&#x3D;\sum\limits_{k&#x3D;1}^{\infty}a_k\in\left(\frac56,1\right]$，下面用高中范围内的知识来证明。</p>
+<p>先在草稿纸上分析一下 $f(x)$ 在 $x&#x3D;0$ 附近的性质：</p>
+<p>$$\begin{aligned}\frac1x\ln(1+x)&amp;&#x3D;1-\frac12x+\frac13x^2-\frac14x^3+\frac15x^4-\cdots\\ \frac12\ln(1+x)&amp;&#x3D;\quad\ \ \ \frac12x-\frac14x^2+\frac16x^3-\frac18x^4+\cdots\\ \hline f(x)&amp;&#x3D;1\qquad\quad+\frac1{12}x^2-\frac{1}{12}x^3+\frac3{40}x^4-\cdots\end{aligned}$$</p>
+<p>那么我们就看出要构造的不等式了，即 $1&lt;f(x)&lt;1+\frac1{12}x^2(x&gt;0)$。</p>
+<p>令 $g(x)&#x3D;\left(1+\frac12 x\right)\ln(1+x)-x(x\ge0)$，那么 $g’(x)&#x3D;\frac{x\left[\ln(x+1)-1\right]+\ln(x+1)}{2(x+1)}\ge 0$，因此 $g(x)\ge g(0)&#x3D;0$；</p>
+<p>令$h(x)&#x3D;\left(1+\frac12 x\right)\ln(1+x)-x\left(1+\frac1{12}x^2\right)$，则 $h’(x)&#x3D;\frac{-x^3-x^2+2x\ln(x+1)-2x+2\ln(x+1)}{4(x+1)}$。再令 $p(x)&#x3D;-x^3-x^2+2x\ln(x+1)-2x+2\ln(x+1)$，则 $p’(x)&#x3D;-3x^2-2x+2\ln(x+1)\le0$（用到不等式 $\forall x&gt;-1,x\ge\ln(x+1)$），故 $p(x)\le p(0)&#x3D;0$，进而 $h’(x)\le 0\Rightarrow h(x)\le h(0)&#x3D;0$。</p>
+<p>综上有 $x&lt;x\cdot f(x)&lt;x\left(1+\frac1{12}x^2\right)$，即 $1&lt;f(x)&lt;1+\frac1{12}x^2$。</p>
+<p>由 $f(x)&gt;1$ 可得 $a_{n+1}&#x3D;1-f\left(\frac1n\right)&lt;0$，因此 $\ln(n!)-\left(n+\frac12\right)\ln n+1&#x3D;\sum\limits_{k&#x3D;1}^na_n\le a_1&#x3D;1$；</p>
+<p>由 $f(x)&lt;1+\frac1{12}x^2$ 可得 $a_{n+1}&#x3D;1-f\left(\frac1n\right)&gt;-\frac1{12n^2}$，因此 $\ln(n!)-\left(n+\frac12\right)\ln n+1&#x3D;\sum\limits_{k&#x3D;1}^na_n&gt;1-\frac1{12}\sum\limits_{k&#x3D;1}^{n-1}\frac1{k^2}$，下面就是高中生都会的放缩了，都不需要用到 $\sum\limits_{n&#x3D;1}^{\infty}\frac1{n^2}&#x3D;\frac{\pi^2}6$：</p>
+<p>$$\sum\limits_{k&#x3D;1}^{n-1}\frac1{k^2}&lt;1+\sum\limits_{k&#x3D;2}^{n-1}\frac1{k(k-1)}&#x3D;1+1-\frac1n&#x3D;2$$</p>
+<p>再注意一下 $n&#x3D;1$ 之类的边界即可。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
                     <footer id="footer">
@@ -235,6 +243,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
