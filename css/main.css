@@ -775,7 +775,7 @@ code,
     font-family: "Fira Code", "Noto Sans SC", monospace;
 }
 table {
-    margin: 15px 0;
+    margin: auto;
 }
 table td:nth-child(even) {
     background: #c7e0fb4d;

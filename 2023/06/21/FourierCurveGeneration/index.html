@@ -20,7 +20,7 @@
 <script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/idea.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
@@ -178,10 +178,103 @@
 <p>$$f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac{n-1}n\right)&#x3D;0 \tag{1}$$</p>
 <p>那么，令 $f_{i,n}(t)&#x3D;f\left(t-\frac{i}n\right)$，则有 $f_{i,n}\left(\frac jn\right)&#x3D;f\left(\frac{j-i}n\right)&#x3D;\delta_{ij}$。</p>
 <p>尝试令 $f(t)&#x3D;C+\sum\limits_{k&#x3D;1}^{m}A_k\cos (2\pi k t)$，其中阶数 $m$ 待定，则易见函数 $f$ 具有以下性质：①周期为1；②是偶函数。因此，$t&#x3D;\frac12$ 也是 $f$ 的一条对称轴，从而当 $n$ 为偶数时，式(1)等价于</p>
-<p>$$\begin{equation}f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac12\right)&#x3D;0\end{equation}$$</p>
+<p>$$f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac12\right)&#x3D;0$$</p>
 <p>共 $\frac n2+1$ 个方程，故应令 $m&#x3D;\frac n2$；当 $n$ 为奇数时，式(1)等价于</p>
-<p>$$\begin{equation}f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac{n-1}{2n}\right)&#x3D;0\end{equation}$$</p>
+<p>$$f(0)&#x3D;1,\quad f\left(\frac1n\right)&#x3D;f\left(\frac2n\right)&#x3D;\cdots&#x3D;f\left(\frac{n-1}{2n}\right)&#x3D;0$$</p>
 <p>共 $\frac {n+1}2$ 个方程，故应令 $m&#x3D;\frac {n-1}2$。通过求解式(2)或(3)中的方程组解出参数 $A_k$ 和 $C$，就可以得到函数 $f$ 的解析式。</p>
+<h2 id="权重性质"><a href="#权重性质" class="headerlink" title="权重性质"></a>权重性质</h2><p>从曲线 $P(t)$ 的定义式可以看出，对某个固定的 $t$，$P(t)$ 是所有 $P_i$ 坐标的加权平均，权重为 $f_{i,n}(t)$。下面证明，采用上一部分的 $f_{i,n}(t)$ 定义，则所有权重的和恒为 $1$，即 $\sum\limits_{i&#x3D;0}^{n-1}f_{i,n}(t)\equiv1$：</p>
+<p>令 $g(t)&#x3D;\sum\limits_{i&#x3D;0}^{n-1}f_{i,n}(t)&#x3D;\sum\limits_{i&#x3D;0}^{n-1}f\left(t-\frac{i}n\right)$，则 $g(0)&#x3D;1$，且</p>
+<p>$$\begin{aligned}\frac{\mathrm{d}}{\mathrm{d} t}g(t)&amp;&#x3D;\sum_{i&#x3D;0}^{n-1}\frac{\mathrm{d}}{\mathrm{d} t}f\left(t-\frac in\right)\\ &amp;&#x3D;-\sum_{i&#x3D;0}^{n-1}\sum_{k&#x3D;1}^m 2\pi kA_k\sin\left[2\pi k\left(t-\frac in\right)\right]\\ &amp;&#x3D;-\sum_{k&#x3D;1}^m2\pi kA_k\sum_{i&#x3D;0}^{n-1}\sin\left[2\pi k\left(t-\frac in\right)\right]\end{aligned} \tag{2}$$</p>
+<p>注意到三角恒等式</p>
+<p>$$\begin{aligned}\sum_{i&#x3D;0}^{n-1}\sin\left(\theta-2\pi k \frac in\right)&amp;&#x3D;\frac{1}{2\mathrm{j}}\sum_{i&#x3D;0}^{n-1}\exp \left[\mathrm{j}\left(\theta-2\pi k \frac in\right)\right]-\frac{1}{2\mathrm{j}}\sum_{i&#x3D;0}^{n-1}\exp\left[-\mathrm{j}\left(\theta-2\pi k \frac in\right)\right]\\ &amp;&#x3D;\frac{1}{2\mathrm{j}}\frac{\mathrm{e}^{\mathrm{j}\theta}\left[1-\exp\left(-\mathrm{j}2\pi ki\right)\right]}{\exp\left(-\mathrm{j}2\pi k\frac in\right)}-\frac{1}{2\mathrm{j}}\frac{\mathrm{e}^{-\mathrm{j}\theta}\left[1-\exp\left(\mathrm{j}2\pi ki\right)\right]}{\exp\left(\mathrm{j}2\pi k\frac in\right)}\\ &amp;&#x3D;0\end{aligned}$$</p>
+<p>取 $\theta&#x3D;2\pi kt$ 代入(2)，即得 $\frac{\mathrm{d}}{\mathrm{d} t}g(t)&#x3D;0$，从而 $g(t)\equiv 1$，即 $f_{i,n}(t)$ 是一组归一化的权值系数。</p>
+<h2 id="A-k-与-C-的解析解"><a href="#A-k-与-C-的解析解" class="headerlink" title="$A_k$ 与 $C$ 的解析解"></a>$A_k$ 与 $C$ 的解析解</h2><p>实际上，可以给出 $A_k$ 和 $C$ 的解：</p>
+<p>$$(C,A_1,A_2,\cdots, A_m)&#x3D;\begin{cases}\left(\frac1{n},\frac2n,\frac2n,\cdots,\frac2n,\frac1{n}\right),\quad n\text{为偶数} \\ \left(\frac1{n},\frac2n,\frac2n,\cdots,\frac2n\right),\quad n\text{为奇数}\end{cases}$$</p>
+<h1 id="曲线生成效果"><a href="#曲线生成效果" class="headerlink" title="曲线生成效果"></a>曲线生成效果</h1><p>下面是控制点坐标如下表所示时该算法生成的曲线：</p>
+<table>
+<thead>
+<tr>
+<th>$i$</th>
+<th>$0$</th>
+<th>$1$</th>
+<th>$2$</th>
+<th>$3$</th>
+<th>$4$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$P_i$ 坐标</td>
+<td>$(0,0)$</td>
+<td>$(1,2)$</td>
+<td>$(3,-1)$</td>
+<td>$(4,3)$</td>
+<td>$(6,1)$</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCGbleU"><img src="https://s1.ax1x.com/2023/06/21/pCGbleU.png" alt="pCGbleU.png" border="0" /></a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code class="matlab">clear all;
+controlPoints = [0, 0; 1, 2; 3, -1; 4, 3; 6, 1];
+
+n = size(controlPoints, 1);
+
+t = 0:0.01:n-1;
+x = zeros(size(t));
+y = zeros(size(t));
+
+% 计算傅里叶系数
+coeff = GetFourierCoefficient(n);
+
+for i = 1:n
+    % 计算第i个控制点的权重
+    weight = GetFourierWeight(coeff, t, i - 1, n);
+    % 计算第i个控制点的x坐标
+    x = x + weight * controlPoints(i, 1);
+    % 计算第i个控制点的y坐标
+    y = y + weight * controlPoints(i, 2);
+end
+
+% 画出控制多边形
+plot(controlPoints(:, 1), controlPoints(:, 2), &#39;r*&#39;);
+hold on; grid on; axis equal;
+
+% 画出拟合的曲线
+plot(x, y, &#39;b-&#39;);
+title(&#39;傅里叶级数权重法拟合曲线&#39;)
+
+function coeff = GetFourierCoefficient(n)
+    if mod(n, 2) == 0
+        A = zeros(n / 2 + 1, n / 2 + 1);
+        b = zeros(n / 2 + 1, 1);
+        b(1) = 1;
+        for i = 0:n / 2
+            A(i + 1, :) = cospi(2 * i * (0:n / 2) / n);
+        end
+        coeff = A \ b;
+    else
+        A = zeros((n + 1) / 2, (n + 1) / 2);
+        b = zeros((n + 1) / 2, 1);
+        b(1) = 1;
+        for i = 0:(n - 1) / 2
+            A(i + 1, :) = cospi(2 * i * (0:(n + 1) / 2 - 1) / n);
+        end
+        coeff = A \ b;
+    end
+end
+
+function weight = GetFourierWeight(coeff, t, k, n)
+    if mod(n, 2) == 0
+        weight = coeff(1) * ones(size(t));
+        for i = 1:n / 2
+            weight = weight + coeff(i + 1) * cospi(2 * i * (t - k) / n);
+        end
+    else
+        weight = coeff(1) * ones(size(t));
+        for i = 1:(n - 1) / 2
+            weight = weight + coeff(i + 1) * cospi(2 * i * (t - k) / n);
+        end
+    end
+end
+</code></pre>
 
     </div>
     
