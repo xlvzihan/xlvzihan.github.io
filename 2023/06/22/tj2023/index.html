@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9D%82%E8%B0%88/" style="color: #00bcd4">杂谈</a>
+                <a href="/tags/%E6%9D%82%E8%B0%88/" style="color: #ffa2c4">杂谈</a>
             </span>
             
         </span>
@@ -193,10 +193,10 @@
 </ol>
 <p>(1) 求曲线 $y&#x3D;f(x)$ 在 $x&#x3D;2$ 处切线的斜率；</p>
 <p>(2) 当 $x&gt;0$ 时，证明：$f(x)&gt;1$；</p>
-<p>(3) 证明：$\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+1\le 1$.</p>
+<p>(3) 证明：$\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+n\le 1$.</p>
 </blockquote>
 <p>直接看第(3)问：</p>
-<p>联想到数学分析中的级数，将不等式中间看做级数 $\sum\limits_{k&#x3D;1}^na_k$，首先构造出 $a_k$：令 $a_1&#x3D;\ln(1!)-\left(1+\frac12\right)\ln 1+1&#x3D;1$，$a_{n+1}&#x3D;\left[\frac56&lt;\ln(n+1)!-\left(n+\frac32\right)\ln (n+1)+1\right]-\left[\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+1\right]&#x3D;1-\left(n+\frac12\right)\ln\frac{n+1}{n}&#x3D;1-f\left(\frac1n\right)$。</p>
+<p>联想到数学分析中的级数，将不等式中间看做级数 $\sum\limits_{k&#x3D;1}^na_k$，首先构造出 $a_k$：令 $a_1&#x3D;\ln(1!)-\left(1+\frac12\right)\ln 1+1&#x3D;1$，$a_{n+1}&#x3D;\left[\frac56&lt;\ln(n+1)!-\left(n+\frac32\right)\ln (n+1)+n+1\right]-\left[\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+n\right]&#x3D;1-\left(n+\frac12\right)\ln\frac{n+1}{n}&#x3D;1-f\left(\frac1n\right)$。</p>
 <p>那么分析一下，由(2)结论可知$a_n&lt;0(n\ge 2)$，则欲证结论等价于级数收敛且级数和 $S&#x3D;\sum\limits_{k&#x3D;1}^{\infty}a_k\in\left[\frac56,1\right]$，下面用高中范围内的知识来证明，当然以下所有证明过程都是不超纲的。</p>
 <p>先在草稿纸上分析一下 $f(x)$ 在 $x&#x3D;0$ 附近的性质：</p>
 <p>$$\begin{aligned}\frac1x\ln(1+x)&amp;&#x3D;1-\frac12x+\frac13x^2-\frac14x^3+\frac15x^4-\cdots\\ \frac12\ln(1+x)&amp;&#x3D;\quad\ \ \ \frac12x-\frac14x^2+\frac16x^3-\frac18x^4+\cdots\\ \hline f(x)&amp;&#x3D;1\qquad\ \ +\frac1{12}x^2-\frac{1}{12}x^3+\frac3{40}x^4-\cdots\end{aligned}$$</p>
