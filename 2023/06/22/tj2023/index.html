@@ -170,7 +170,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00bcd4">数学</a>
+                <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
             </span>
             
             <span class="tag">
@@ -199,7 +199,7 @@
 <p>联想到数学分析中的级数，将不等式中间看做级数 $\sum\limits_{k&#x3D;1}^na_k$，首先构造出 $a_k$：令 $a_1&#x3D;\ln(1!)-\left(1+\frac12\right)\ln 1+1&#x3D;1$，$a_{n+1}&#x3D;\left[\frac56&lt;\ln(n+1)!-\left(n+\frac32\right)\ln (n+1)+1\right]-\left[\frac56&lt;\ln(n!)-\left(n+\frac12\right)\ln n+1\right]&#x3D;1-\left(n+\frac12\right)\ln\frac{n+1}{n}&#x3D;1-f\left(\frac1n\right)$。</p>
 <p>那么分析一下，由(2)结论可知$a_n&lt;0(n\ge 2)$，则欲证结论等价于级数收敛且级数和 $S&#x3D;\sum\limits_{k&#x3D;1}^{\infty}a_k\in\left[\frac56,1\right]$，下面用高中范围内的知识来证明，当然以下所有证明过程都是不超纲的。</p>
 <p>先在草稿纸上分析一下 $f(x)$ 在 $x&#x3D;0$ 附近的性质：</p>
-<p>$$\begin{aligned}\frac1x\ln(1+x)&amp;&#x3D;1-\frac12x+\frac13x^2-\frac14x^3+\frac15x^4-\cdots\\ \frac12\ln(1+x)&amp;&#x3D;\quad\ \ \ \frac12x-\frac14x^2+\frac16x^3-\frac18x^4+\cdots\\ \hline f(x)&amp;&#x3D;1\qquad\ \ \ +\frac1{12}x^2-\frac{1}{12}x^3+\frac3{40}x^4-\cdots\end{aligned}$$</p>
+<p>$$\begin{aligned}\frac1x\ln(1+x)&amp;&#x3D;1-\frac12x+\frac13x^2-\frac14x^3+\frac15x^4-\cdots\\ \frac12\ln(1+x)&amp;&#x3D;\quad\ \ \ \frac12x-\frac14x^2+\frac16x^3-\frac18x^4+\cdots\\ \hline f(x)&amp;&#x3D;1\qquad\ \ +\frac1{12}x^2-\frac{1}{12}x^3+\frac3{40}x^4-\cdots\end{aligned}$$</p>
 <p>那么我们就看出要构造的不等式了，即 $1&lt;f(x)&lt;1+\frac1{12}x^2$（以下均只考虑 $x&gt;0$）</p>
 <p>令 $g(x)&#x3D;\left(1+\frac12 x\right)\ln(1+x)-x$，则 $g’(x)&#x3D;\frac{x\ln(x+1)-x+\ln(x+1)}{2(x+1)}$，令 $p(x)&#x3D;x\ln(x+1)-x+\ln(x+1)$，则 $p’(x)&#x3D;\ln(x+1)&gt;0$，故 $p(x)&gt;p(0)&#x3D;0$，因此 $g’(x)&gt;0\Rightarrow g(x)&gt;g(0)&#x3D;0$；</p>
 <p>令$h(x)&#x3D;\left(1+\frac12 x\right)\ln(1+x)-x\left(1+\frac1{12}x^2\right)$，则 $h’(x)&#x3D;\frac{-x^3-x^2+2x\ln(x+1)-2x+2\ln(x+1)}{4(x+1)}$。再令 $q(x)&#x3D;-x^3-x^2+2x\ln(x+1)-2x+2\ln(x+1)$，则 $q’(x)&#x3D;-3x^2-2x+2\ln(x+1)&lt;0$（这里用到 $\forall x&gt;0,\ln(x+1)\le x$），故 $q(x)&lt;q(0)&#x3D;0$，进而 $h’(x)&lt;0\Rightarrow h(x)&lt;h(0)&#x3D;0$；</p>
