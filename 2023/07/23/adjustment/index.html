@@ -170,12 +170,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #03a9f4">数学</a>
+                <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00a596">数学</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9D%82%E8%B0%88/" style="color: #ff7d73">杂谈</a>
+                <a href="/tags/%E6%9D%82%E8%B0%88/" style="color: #ffa2c4">杂谈</a>
             </span>
             
         </span>
@@ -193,7 +193,16 @@
 <p>①先证明不等式：若 $\frac12\le x&lt;2&lt;y$，则 $\left(x-\frac1x\right)+\left(y-\frac1y\right)-\frac32-\left(\frac{xy}2-\frac2{xy}\right)&gt;0$。</p>
 <p>注意到 $x\ge\frac12,y&gt;2$，因此 $xy&gt;1$，故不等式左边 $&#x3D;\frac{(x-2)(y-2)(1-xy)}{xy}&gt;0$。</p>
 <p>②令 $f(a_1,a_2,\cdots,a_n)&#x3D;\sum\limits_{k&#x3D;1}^n \left(a_k-\frac1{a_k}\right)$，若 $a_k$ 不全等于 $2$，则一定存在 $i,j$ 使得 $\frac12\le a_i&lt;2&lt;a_j$，故（此处便于叙述设 $i&lt;j$）</p>
-<p>$$\begin{aligned}&amp;f(a_1,a_2,\cdots,a_n)-f\left(a_1,a_2,\cdots,a_{i-1},\frac{a_ia_j}2, \cdots,a_{j-1},2,\cdots,a_n\right)\\&amp;&#x3D;\left(a_i-\frac1a_i\right)+\left(a_j-\frac1a_j\right)-\frac32-\left(\frac{a_ia_j}2-\frac2{a_ia_j}\right)\\&amp;&gt;0\end{aligned}$$</p>
+<p>$$\begin{aligned}&amp;f(a_1,a_2,\cdots,a_n)-f\left(a_1,a_2,\cdots,a_{i-1},\frac{a_ia_j}2, \cdots,a_{j-1},2,\cdots,a_n\right)\\&amp;&#x3D;\left(a_i-\frac1{a_i}\right)+\left(a_j-\frac1{a_j}\right)-\frac32-\left(\frac{a_ia_j}2-\frac2{a_ia_j}\right)\\&amp;&gt;0\end{aligned}$$</p>
+<p>即将 $a_i$ 调整为 $\frac{a_ia_j}2$，$a_j$ 调整为 $2$ 时，$\prod\limits_{k&#x3D;1}^na_k$ 保持不变，而 $f$ 的值减小。</p>
+<p>③由②可知，对于任意满足条件的 ${a_k}$，若 $a_k$ 不全等于 $2$，则存在 $i,j$ 使得 $\frac12\le a_i&lt;2&lt;a_j$，按照②进行一次调整，则等于 $2$ 的 $a_k$ 数量（至少）增加 $1$，而 $f$ 的值减小，故至多 $n$ 步后 $a_k$ 全部被调整为 $2$，此时 $f(2,2,\cdots,2)&#x3D;\frac32n$。因此对任意满足题意的 ${a_k}$，都有 $f(a_1,a_2,\cdots,a_n)\ge\frac32n$。</p>
+<p>按照这种方法进行证明，没有问题。但是，如果按照下面的方法进行”证明“：</p>
+<p>①先证明不等式：若 $\frac12\le x&lt;2&lt;y$，则 $\left(x-\frac1x\right)+\left(y-\frac1y\right)-2\cdot\left(\sqrt{xy}-\frac1{\sqrt{xy}}\right)&gt;0$。</p>
+<p>注意到 $x\ge\frac12,y&gt;2$，因此 $xy&gt;1$，故不等式左边 $&#x3D;(\sqrt x-\sqrt y)^2\left(1-\frac1{xy}\right)&gt;0$。</p>
+<p>②若 $a_k$ 不全等于 $2$，则一定存在 $i,j$ 使得 $\frac12\le a_i&lt;2&lt;a_j$，故（此处便于叙述设 $i&lt;j$）</p>
+<p>$$\begin{aligned}&amp;f(a_1,a_2,\cdots,a_n)-f\left(a_1,a_2,\cdots,a_{i-1},\sqrt{a_ia_j}, \cdots,a_{j-1},\sqrt{a_ia_j},\cdots,a_n\right)\\&amp;&#x3D;\left(a_i-\frac1{a_i}\right)+\left(a_j-\frac1{a_j}\right)-2\cdot\left(\sqrt{a_ia_j}-\frac1{\sqrt{a_ia_j}}\right)\\&amp;&gt;0\end{aligned}$$</p>
+<p>即将 $a_i$ 和 $a_j$ 都调整为 $\sqrt{a_ia_j}$ 时，$\prod\limits_{k&#x3D;1}^na_k$ 保持不变，而 $f$ 的值减小。</p>
+<p>则至此我们不能说明 $f\left(2,2,\cdots,2\right)$ 是 $f$ 的最小值：如果我们试图通过“当存在$a_i\neq a_j$ 时，可以不断进行一步调整来使 $f$ 变小”来说明，则我们无法证明这种调整能够在有限步内终止，即 $f\left(a_1,a_2,\cdots,a_n\right)&gt;\ldots&gt;f(2,2,\cdots,2)$ 的大于号有无穷多个，虽然可以通过 $f$ 的连续性和极限保序性来证明，但在初等数学的范围内需要额外的且繁冗的说明；如果我们试图通过“当存在 $a_i\neq a_j$ 时，可以进行一步调整来使 $f$ 变小，故此处不是 $f$ 的最小值”来说明 $f$ 只能在 $a_1&#x3D;a_2&#x3D;\ldots&#x3D;a_n&#x3D;2$ 时取得最小值，则缺少 $f$ 能够取到最小值的证明，因为 $f$ 定义在连续域上，最值的存在性在初等数学中不显然。</p>
 
     </div>
     
